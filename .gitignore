@@ -3,7 +3,7 @@ output*
 logs*
 taming*
 samples*
-# datasets*
+datasets*
 _*
 logs*
 __pycache__/

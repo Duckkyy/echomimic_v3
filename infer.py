@@ -94,7 +94,8 @@ class Config:
         # self.base_dir = "datasets/echomimicv3_demos/"
         self.base_dir = "datasets/custom_data/"
         self.test_name_list = [
-            'anime'
+            # 'anime',
+            'monalisa',
             # 'guitar_woman_01','guitar_man_01','music_woman_01',
             # 'demo_cartoon_03','demo_cartoon_04',
             # '2025-07-14-1036','2025-07-14-1942',

@@ -96,6 +96,8 @@ def get_mask_coord(image_path, device="cuda"):
     img_rgb = np.array(Image.open(image_path).convert("RGB"))
     h, w, _ = img_rgb.shape
 
+    print(f"Detecting face in image of size (h={h}, w={w})",  HAS_RETINAFACE)
+
     # 1) Real-face expert (RetinaFace)
     if HAS_RETINAFACE:
         try:

@@ -49,9 +49,9 @@ class Config:
         self.fsdp_dit = False
 
         # Pipeline parameters
-        self.num_skip_start_steps = 5
+        self.num_skip_start_steps = 2
         self.teacache_offload = False
-        self.cfg_skip_ratio = 0
+        self.cfg_skip_ratio = 0.5  # Skip 50% of CFG steps for ~2x speedup
         self.enable_riflex = False
         self.riflex_k = 6
 
@@ -62,10 +62,10 @@ class Config:
         self.vae_path = None
 
         # Sampler and audio settings
-        self.sampler_name = "Flow"
+        self.sampler_name = "Flow_DPM++"  # DPM++ is faster than Flow
         self.audio_scale = 1.0
-        self.enable_teacache = False
-        self.teacache_threshold = 0.1
+        self.enable_teacache = True  # Enable TeaCache for faster inference
+        self.teacache_threshold = 0.08  # Optimal range: 0~0.1 (lower = better quality, higher = faster)
         self.shift = 5.0
         self.use_un_ip_mask = False
 
@@ -73,7 +73,7 @@ class Config:
         self.negative_prompt = "Gesture is bad. Gesture is unclear. Strange and twisted hands. Bad hands. Bad fingers. Unclear and blurry hands. 手部快速摆动, 手指频繁抽搐, 夸张手势, 重复机械性动作."#Unclear gestures, broken hands, more than five fingers on one hand, extra fingers, fused fingers. "# Strange body and strange trajectory. Distortion.  "
 
         self.use_longvideo_cfg = False
-        self.partial_video_length = 113
+        self.partial_video_length = 81  # Reduced from 113 for less VRAM and faster processing
         self.overlap_video_length = 8
         self.neg_scale = 1.5
         self.neg_steps = 2
@@ -82,7 +82,7 @@ class Config:
         self.use_dynamic_cfg = True
         self.use_dynamic_acfg = True
         self.seed = 43
-        self.num_inference_steps = 25
+        self.num_inference_steps = 15  # Reduced from 25 (5 for talking head, 15-25 for body)
         self.lora_weight = 1.0
 
         # Model settings

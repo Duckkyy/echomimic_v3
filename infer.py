@@ -51,7 +51,7 @@ class Config:
         # Pipeline parameters
         self.num_skip_start_steps = 2
         self.teacache_offload = False
-        self.cfg_skip_ratio = 0.5  # Skip 50% of CFG steps for ~2x speedup
+        self.cfg_skip_ratio = 0  # Keep at 0 - CFG skip doesn't work with audio guidance
         self.enable_riflex = False
         self.riflex_k = 6
 

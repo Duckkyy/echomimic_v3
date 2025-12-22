@@ -131,6 +131,8 @@ def get_mask_coord(image_path, device="cuda"):
                 px1, py1, px2, py2 = xyxy[i]
                 x1, y1, x2, y2 = _face_box_from_person_box(px1, py1, px2, py2, w, h)
                 x1, y1, x2, y2 = _pad(x1, y1, x2, y2, w, h, pad=0.08)
+
+                print(f"  YOLO person box used for face bbox.", x1, y1, x2, y2)
                 return y1, y2, x1, x2, h, w
 
             # Otherwise just take the biggest box (sometimes head-only anime triggers a different class)

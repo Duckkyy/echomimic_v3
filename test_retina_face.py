@@ -1,5 +1,6 @@
 # pip install retina-face
 # we recommand tensorflow==2.15
+import torch  # Import torch first to avoid TensorFlow/CUDA conflicts
 from retinaface import RetinaFace
 import sys
 from PIL import Image, ImageDraw

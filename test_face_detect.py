@@ -112,7 +112,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         # Default: test the anime image
         default_paths = [
-            "datasets/custom_data/imgs/anime.png",
+            "datasets/custom_data/imgs/anime.jpg",
         ]
         
         print("No image path provided. Testing default images...")

@@ -140,6 +140,7 @@ def get_mask_coord(image_path, device="cuda"):
             i = int(np.argmax(areas))
             x1, y1, x2, y2 = xyxy[i]
             x1, y1, x2, y2 = _pad(x1, y1, x2, y2, w, h, pad=0.10)
+            print(f"  YOLO largest box used for face bbox.", x1, y1, x2, y2)
             return y1, y2, x1, x2, h, w
     except Exception:
         pass
